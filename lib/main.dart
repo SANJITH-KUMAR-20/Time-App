@@ -17,12 +17,21 @@ class Home extends StatelessWidget {
         foregroundColor: Colors.blueGrey,
         backgroundColor: Colors.red[400],
       ),
-      body: const Center(
-        child: Icon(
-         Icons.airline_seat_flat,
-         color: Colors.black,
-         size: 30,
-        ),
+      body:
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        children: <Widget>[
+          const Text("hello, world"),
+          FloatingActionButton(onPressed: (){},
+          backgroundColor: Colors.red[600],
+          child: const Text("click me")),
+          Container(
+            color: Colors.blue,
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+            child: const Text("Nice One"),
+          )
+        ],
       ),
       floatingActionButton: const FloatingActionButton(
         onPressed: () {},
