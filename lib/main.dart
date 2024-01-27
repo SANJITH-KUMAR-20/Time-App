@@ -1,45 +1,115 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MaterialApp(
-  home: Home(),
+  home: NinjaCard(),
 ));
 
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class NinjaCard extends StatelessWidget {
+  const NinjaCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: const Text('My Simple App'),
+        title: const Text("Ninja ID Card",
+        style: TextStyle(
+          color: Colors.white
+        ),),
+        backgroundColor: Colors.grey[850],
         centerTitle: true,
-        foregroundColor: Colors.blueGrey,
-        backgroundColor: Colors.red[400],
+        elevation: 0.0,
       ),
-      body:
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.baseline,
-        children: <Widget>[
-          const Text("hello, world"),
-          FloatingActionButton(onPressed: (){},
-          backgroundColor: Colors.red[600],
-          child: const Text("click me")),
-          Container(
-            color: Colors.blue,
-            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-            child: const Text("Nice One"),
-          )
-        ],
-      ),
-      floatingActionButton: const FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red[400],
-        child: Text('click'),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Center(
+              child: CircleAvatar(backgroundImage: AssetImage(
+                "assets/Kaiser_Wilhelm_II_of_Germany.jpg"
+              ),
+              radius: 40.0,),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[600],
+            ),
+            const Text("Name",
+            style: TextStyle(
+              color: Colors.grey,
+              letterSpacing: 2.0,
+            )
+            ),
+            const SizedBox(height: 10.0),
+            Text(
+              "Sanjith",
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            const SizedBox(height: 30.0),
+            const Text("Id",
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                )
+            ),
+            const SizedBox(height: 10.0),
+            Text(
+              "St18376",
+              style: TextStyle(
+                  color: Colors.amberAccent[200],
+                  letterSpacing: 2.0,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+            const SizedBox(height: 30.0),
+            const Text("CURRENT NINJA LEVEL",
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                )
+            ),
+            const SizedBox(height: 10.0),
+            Text(
+              "8",
+              style: TextStyle(
+                  color: Colors.amberAccent[200],
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+            const SizedBox(height: 30.0),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey.shade400,
+
+                ),
+                const SizedBox(width: 15.0,),
+                Text('fatsai.sanjith@ninja.co.in',
+                style: TextStyle(
+                  color: Colors.grey[400],
+                  fontSize: 18.0,
+                  letterSpacing: 1.0,
+                  fontWeight: FontWeight.normal
+                ),)
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
 
 
